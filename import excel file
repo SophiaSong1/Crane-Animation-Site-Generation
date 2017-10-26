@@ -1,0 +1,55 @@
+excelFile = "D:\coop\equipmentlist2.xlsx"
+foun_file = "D:\coop\foundationsheet.xlsx"
+-- Start an Excel OLE Object
+x = CreateOLEObject "Excel.Application"
+xl = CreateOLEObject"Excel.Application"
+-- Create a new workbook in the new excel document
+x.application.Workbooks.open(excelFile)
+xl.application.Workbooks.open(foun_file)
+
+-- This makes Excel Visible
+x.visible = true
+xl.visible = true
+
+
+for i=6 to 17 do
+(	
+	index = i as string
+	m_x_pos = (x.application.Range("J"+index)).value
+	m_y_pos = (x.application.Range("K"+index)).value
+	m_z_pos = (x.application.Range("L"+index)).value		
+	--m_01_pos = StringtoPoint3Converter((x.application.Range("B"+index)).value)
+	a = (x.application.Range("E"+index)).value
+	b = (x.application.Range("F"+index)).value
+	c = (x.application.Range("G"+index)).value
+	box pos:[m_x_pos,m_y_pos,m_z_pos] length:b width:a height:c
+	
+	)
+
+
+	
+	foun_x_pos =(xl.application.Range("F2")).value
+	foun_y_pos =(xl.application.Range("G2")).value
+	foun_z_pos =(xl.application.Range("H2")).value
+		
+	foun_length = (xl.application.Range("B2")).value
+	foun_width = (xl.application.Range("C2")).value
+	foun_height = (xl.application.Range("D2")).value
+
+	box pos:foun_pos length: foun_length width:foun_width height:foun_height
+	
+	
+	
+	
+	
+----m_trans = StringtoArrayConverter((x.application.Range("H2")).value)
+
+
+	
+---print (x.application.Range("A1")).value
+---print (x.application.Range("B2")).value
+(x.application.Range("A1")).value = "Module ."
+	
+
+---(x.application.Range("A1:B1")).Interior.ColorIndex = 45
+
