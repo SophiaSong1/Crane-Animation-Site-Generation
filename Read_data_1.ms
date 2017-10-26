@@ -1,4 +1,6 @@
 -- This Script will reset your scene, so save before running it.
+-- This script requires downloading the two DAT files from the repository, sample_site_cylinder.dat and sample_site_data3.dat
+
 resetMaxFile #noPrompt
 
 -- Function Definition
@@ -44,5 +46,6 @@ fn DrawCylinder   file   =
 	close f
 )
 -- EVALUATE FUNCTION        
+-- Change the directories to the directories where the files are saved.
 DrawBox    "D:\Vivian\UAlberta\2017-2018 Coop\3Ds Max\Crane Model\sample_site_data3.dat"
 DrawCylinder    "D:\Vivian\UAlberta\2017-2018 Coop\3Ds Max\Crane Model\sample_site_cylinder.dat"
